@@ -1,7 +1,8 @@
 @inf = 1.0 / 0.0
-@permissions= ["vote", "smoke", "drink", "rent a car"]
+@permissions = ["vote", "smoke", "drink", "rent a car"]
 
 def check_age
+
   puts "Do you live in the UK or US?"
   country = gets.chomp.upcase
   puts "Hello, how old are you? To quit, type 0 (zero)."
@@ -9,12 +10,12 @@ def check_age
 
   if country == "US"
     case age
-      when 1..18
+      when 1...18
         puts "Sorry, no permissions. "
       when 18..21
         puts "You can #{@permissions[0]}."
-      when 21..25
-        puts "You can #{@permissions[0...2]}." # how to remove the array?
+      when 21..24
+        puts "You can #{@permissions[0..2]}." # how to remove the array?
       when 25..@inf
         puts "You can #{@permissions}. Please don't drink and drive."
       when 0
@@ -36,9 +37,9 @@ def check_age
           end
         when 18..21
           puts "You can #{@permissions[0]}."
-        when 21..25
-          puts "You can #{@permissions[0...2]}." # how to remove the array?
-        when 25..@inf
+        when 21..24
+          puts "You can #{@permissions[0..2]}." # how to remove the array?
+        when 25..@inf #can't get this to behave as above!
           puts "You can #{@permissions}. Please don't drink and drive."
         when 0
           puts "Thank you. Goodbye."
@@ -50,7 +51,7 @@ end
 
 loop do
 check_age
-exit
+
 
 end
 
